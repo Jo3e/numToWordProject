@@ -29,9 +29,8 @@ def number_to_words(problem):
             split_number.append(letters)
 
         if len(split_number) == 2:
-            global first_letter
+            
             first_letter = split_number[0] + '0'
-            global second_letter
             second_letter = split_number[1]
 
         for num in tens.keys():
@@ -47,6 +46,36 @@ def number_to_words(problem):
                 split_unit = units[second_letter]
 
         print(split_tens,'-', split_unit)
+
+        
+        # if len(split_number) == 3 and split_number[1] == '0':
+
+            
+        #     first_letter = split_number[0] 
+            
+        #     second_letter = split_number[1] + '0'
+        #     merged_letters = first_letter + second_letter
+            
+        #     third_letter = split_number[2]
+            
+
+        #     for num in hundred.keys():
+        #         merged_letters = int(merged_letters)
+        #         if merged_letters == num:
+        #             global split_hundred
+        #             split_hundred = hundred[merged_letters]
+
+        #     for num in units.keys():
+        #         third_letter = int(third_letter)
+        #         if third_letter == num:
+        #             global split_units
+        #             split_units = units[third_letter]
+
+        #     print(split_hundred, 'and',split_units)
+
+        # elif len(split_number) == 3 and split_number[1] != 0:
+        #     ''
+
 
 
 #         print(units[words])
