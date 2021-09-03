@@ -1,43 +1,54 @@
-digit = int(input("Enter a number to convert to words: "))
+digit = input("Enter a number to convert to words: ")
+
+units = {
+        1:"one", 2:"two", 3:"three", 4:"four", 5:"five", 6:"six", 7:"seven", 8:"eigth", 9:"nine",  10:"ten", 11:"eleven", 12:"twelve", 13:"thirteen", 14:"fourteen", 15:"fifteen", 16:"sixteen", 17:"seventeen",
+         18:"eighteen",19:"nineteen"}
+         
+tens =  {
+
+         20:"twenty", 30:"thirty", 40:"fourty", 50:"fifty", 60:"sixty", 70:"seventy", 
+         80:"eigth", 90:"ninety"}
+         
+hundred = { 100:"one hundred", 200:"two hundred"
+            }
 
 def number_to_words(problem):
-    global units
-    units = {
-        1:"one", 2:"two", 3:"three", 4:"four", 5:"five", 6:"six", 7:"seven", 8:"eight", 9:"nine",  10:"ten", 11:"eleven", 12:"twelve", 13:"thirteen", 14:"fourteen", 15:"fifteen", 16:"sixteen", 17:"seventeen",
-         18:"eighteen",19:"nineteen",
-         20:"twenty", 30:"thirty", 40:"fourty", 50:"fifty", 60:"sixty", 70:"seventy", 
-         80:"eighty", 90:"ninety", 100:"one hundred", 200:"two hundred"
-            }
-    
 
-    for number,words in list(units.items())[1:20]:
+    if len(digit) <= 2 and int(digit) in units.keys():
         
+         print(units[int(digit)])
+            
+    elif len(digit) == 2:
+             
 
-         if digit == number:
-             print(units[number])
+    
+   
 
-         else:
-             pass
-    for number,words in list(units.items())[21:29]:
+        split_number = []
+        for letters in digit:
+            split_number.append(letters)
 
-        if digit == number:
-            print(units[number])
-        else:
-            pass
+        if len(split_number) == 2:
+            global first_letter
+            first_letter = split_number[0] + '0'
+            global second_letter
+            second_letter = split_number[1]
 
-number_to_words(digit)
-x = str(digit)
-print(x)
-output = []
-for i in x:
-    output.append(i)
-print(output)
+        for num in tens.keys():
+            first_letter = int(first_letter)
+            if first_letter == num:
+                global split_tens
+                split_tens = tens[first_letter]
 
-if len(output) == 2:
-    for number, words in units.items():
-        output[0] = int()
-        if output[0] and output[1] == number:
-            print(units[words])
+        for num in units.keys():
+             second_letter = int(second_letter)
+             if second_letter == num:
+                global split_unit
+                split_unit = units[second_letter]
+
+        print(split_tens,'-', split_unit)
+
+
 #         print(units[words])
 #         text1 = output[0]
 #         text2 = output[1]
@@ -46,18 +57,7 @@ if len(output) == 2:
 #     pass
 
 
-if len(output) == 3:
-    output[0] = list(units.items())[28:29]
-    tex1 = output[0]
-    output[1] = list(units.items())[21:27]
-    tex2 = output[2]
-    output[2] = list(units.items())[0:9]
-    tex3 = output[2]
-    print(f"Your number is {tex1}, {tex2} and {tex3}")
-
-else:
-    pass
-
+number_to_words(digit)
 
 
 
