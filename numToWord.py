@@ -9,8 +9,7 @@ tens =  {
          20:"twenty", 30:"thirty", 40:"fourty", 50:"fifty", 60:"sixty", 70:"seventy", 
          80:"eight", 90:"ninety"}
          
-hundred = { 100:"one hundred", 200:"two hundred"
-            }
+hundred = { 100:"one hundred", 200:"two hundred"}
 
 def number_to_words(problem):
 
@@ -72,6 +71,7 @@ def number_to_words(problem):
         print(hundred[first_letter], "and", tens[second_letter], units[third_letter])
 
 number_to_words(digit)
+
 
 
 
