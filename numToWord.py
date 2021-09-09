@@ -17,7 +17,13 @@ def number_to_words(problem):
     if len(digit) <= 2 and int(digit) in units.keys():
         
          print(units[int(digit)])
-            
+
+    
+    elif len(digit) == 2 and int(digit) in tens.keys():
+        print(tens[int(digit)])
+
+    
+
     elif len(digit) == 2:
             
         split_number = []
@@ -44,12 +50,53 @@ def number_to_words(problem):
 
         print(split_tens,'-', split_unit)
 
-        
-    if len(digit) == 3:
+
+    
+    
+    
+    
+    split_number = []
+
+    for letters in digit:
+        split_number.append(letters)
+    
+    if len(split_number) == 3 and split_number[1] == '0':
+
+            
+            first_letter = split_number[0] 
+            
+            second_letter = split_number[1] + '0'
+            merged_letters = first_letter + second_letter
+            
+            third_letter = split_number[2]
+            
+
+            for num in hundred.keys():
+                merged_letters = int(merged_letters)
+                if merged_letters == num:
+                    global split_hundred
+                    split_hundred = hundred[merged_letters]
+
+            for num in units.keys():
+                third_letter = int(third_letter)
+                if third_letter == num:
+                    global split_units
+                    split_units = units[third_letter]
+
+            print(split_hundred, 'and',split_units)
+
+
+    
+    elif len(digit) == 3 and int(digit) in hundred.keys():
+        print(hundred[int(digit)])
+
+
+    elif len(digit) == 3:
         split_number = []
 
         for letters in digit:
             split_number.append(letters)
+
         
         if len(split_number) == 3:
             first_letter = split_number[0] + "00" 
@@ -57,21 +104,28 @@ def number_to_words(problem):
             third_letter = split_number[2]
             # print(first_letter, second_letter, third_letter)
 
-        for num in split_number:
-            first_letter = int(first_letter)
-            second_letter = int(second_letter)
+            for num in split_number:
+                first_letter = int(first_letter)
+                second_letter = int(second_letter)
             # if split_number[1] == int(0):
             #     second_letter = "and"
-            third_letter = int(third_letter)
-            if first_letter == hundred.keys():
-                pass
-            if second_letter == tens.keys():
-                pass
-            if third_letter == units.keys():
-                pass
-        print(hundred[first_letter], "and", tens[second_letter], units[third_letter])
+                third_letter = int(third_letter)
+                if first_letter == hundred.keys():
+                    pass
+                if second_letter == tens.keys():
+                    pass
+                if third_letter == units.keys():
+                    pass
+            print(hundred[first_letter], "and", tens[second_letter], units[third_letter])
+
+           
+
+    
+    
+    
 
 number_to_words(digit)
 
 
 
+ 
