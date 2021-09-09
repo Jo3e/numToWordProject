@@ -9,8 +9,7 @@ tens =  {
          20:"twenty", 30:"thirty", 40:"fourty", 50:"fifty", 60:"sixty", 70:"seventy", 
          80:"eight", 90:"ninety"}
          
-hundred = { 100:"one hundred", 200:"two hundred"
-            }
+hundred = { 100:"one hundred", 200:"two hundred"}
 
 def number_to_words(problem):
 
@@ -128,4 +127,6 @@ number_to_words(digit)
 
 
 
+
  
+
