@@ -85,10 +85,6 @@ def number_to_words(problem):
             print(split_hundred, 'and',split_units)
 
 
-    
-    elif len(digit) == 3 and int(digit) in hundred.keys():
-        print(hundred[int(digit)])
-
 
     elif len(digit) == 3:
         split_number = []
@@ -106,8 +102,6 @@ def number_to_words(problem):
             for num in split_number:
                 first_letter = int(first_letter)
                 second_letter = int(second_letter)
-            # if split_number[1] == int(0):
-            #     second_letter = "and"
                 third_letter = int(third_letter)
                 if first_letter == hundred.keys():
                     pass
@@ -117,7 +111,11 @@ def number_to_words(problem):
                     pass
             print(hundred[first_letter], "and", tens[second_letter], units[third_letter])
 
-           
+        
+
+    
+    # elif len(digit) == 3 and int(digit) in hundred.keys():
+    #     print(hundred[int(digit)])       
 
     
     

@@ -20,6 +20,12 @@ def number_to_words(userInput):
     elif len(digit) == 3:
         
         name = units[int(digit[0])]+ " hundred and "+tens[int(digit[1]+"0")]+"-"+units[int(digit[-1])]
+    #print(name)
+
+    elif len(digit) == 3 and int(digit[1]) == '0':
+        name = units[int(digit[0])] + "hundred and "+ units[int(digit[-1])]
+        
+
     print(name)
 
 number_to_words(digit)
