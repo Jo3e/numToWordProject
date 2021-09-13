@@ -10,13 +10,14 @@ def number_to_words(digit):
          print (roots[int(digit)])
     
     elif len(digit) == 2:
-        print (roots[int(digit[0]+'0')]+"-"+number_to_words(digit[-1]))
+        print (roots[int(digit[0]+'0')]+"-"+roots[int(digit[-1])])
         
     elif len(digit) == 3:
         if int(digit[1:]) == 0:
             print (roots[int(digit[0])]+ " hundred")
         else:
-            print ((roots[int(digit[0])]+ " hundred and "+number_to_words(digit[1:])))
-    print ("Try again")
-
-# number_to_words(digit)
+            print ((roots[int(digit[0])]+ " hundred and "+roots[int(digit[1:])]))
+    else:
+        print ("Try again")
+digit = input("Type a number:")
+number_to_words(digit)
