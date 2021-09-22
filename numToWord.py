@@ -106,13 +106,6 @@ def number_to_words(problem):
                     pass
             print(hundred[first_letter], "and", tens[second_letter], units[third_letter])
 
-<<<<<<< HEAD
-        
-
-    
-    # elif len(digit) == 3 and int(digit) in hundred.keys():
-    #     print(hundred[int(digit)])       
-=======
            
 '''
 >>>> Ify check this one out.
@@ -139,7 +132,6 @@ def number_to_words(digit):
     print ("Try again")
 
 # number_to_words(digit)
->>>>>>> 46811d3bc147bade76489a2e9bb3f07f11ada4ba
 
 '''
     
